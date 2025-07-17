@@ -260,7 +260,8 @@ $(function () {
         bsRangePickerRange = $('#bs-rangepicker-range'),
         bsRangePickerWeekNum = $('#bs-rangepicker-week-num'),
         bsRangePickerDropdown = $('#bs-rangepicker-dropdown'),
-        bsRangePickerDropdownCustom = $('.bs-rangepicker-dropdown-custom');
+        bsRangePickerDropdownCustom = $('.bs-rangepicker-dropdown-custom'),
+        bsDateRangePickerRange = $('#bs-daterangepicker-range');
 
     // Basic
     if (bsRangePickerBasic.length) {
@@ -318,6 +319,38 @@ $(function () {
                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             },
             opens: isRtl ? 'left' : 'right'
+        });
+    }
+
+    if (bsDateRangePickerRange.length) {
+        bsDateRangePickerRange.daterangepicker({
+            ranges: {
+                'Hari Ini': [moment(), moment()],
+                'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '7 Hari Terakhir': [moment().subtract(6, 'days'), moment()],
+                '30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
+                'Bulan Ini': [moment().startOf('month'), moment().endOf('month')],
+                'Bulan Lalu': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            opens: isRtl ? 'left' : 'right',
+            locale: {
+                format: 'DD/MM/YYYY',
+                separator: ' - ',
+                applyLabel: 'Terapkan',
+                cancelLabel: 'Batal',
+                fromLabel: 'Dari',
+                toLabel: 'Sampai',
+                customRangeLabel: 'Rentang Lainnya',
+                weekLabel: 'M',
+                daysOfWeek: [
+                    'Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'
+                ],
+                monthNames: [
+                    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+                ],
+                firstDay: 1
+            }
         });
     }
 
