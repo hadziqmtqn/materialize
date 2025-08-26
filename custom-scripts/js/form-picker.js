@@ -35,9 +35,20 @@
     }
 
     // Datetime
-    if (flatpickrDateTime.length) {
-        flatpickerDateTime.each(function () {
-            $(this).flatpickr({
+    // if (flatpickrDateTime.length) {
+    //     flatpickerDateTime.each(function () {
+    //         $(this).flatpickr({
+    //             enableTime: true,
+    //             dateFormat: 'Y-m-d H:i'
+    //         });
+    //     });
+    // }
+
+    if (flatpickrDateTime.length > 0) {
+        flatpickrDateTime.forEach((input) => {
+            flatpickr(input, {
+                monthSelectorType: 'static',
+                locale: "id",
                 enableTime: true,
                 dateFormat: 'Y-m-d H:i'
             });
