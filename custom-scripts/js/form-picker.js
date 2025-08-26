@@ -9,7 +9,7 @@
     // --------------------------------------------------------------------
     const flatpickrDates = document.querySelectorAll('.flatpickr-date'),
         flatpickrTime = document.querySelector('#flatpickr-time'),
-        flatpickrDateTime = document.querySelector('.flatpickr-datetime'),
+        flatpickrDateTime = document.querySelectorAll('.flatpickr-datetime'),
         flatpickrMulti = document.querySelector('#flatpickr-multi'),
         flatpickrRange = document.querySelector('#flatpickr-range'),
         flatpickrInline = document.querySelector('#flatpickr-inline'),
@@ -44,7 +44,7 @@
     //     });
     // }
 
-    if (flatpickrDateTime) {
+    if (flatpickrDateTime.length > 0) {
         flatpickrDateTime.forEach((input) => {
             flatpickr(input, {
                 monthSelectorType: 'static',
