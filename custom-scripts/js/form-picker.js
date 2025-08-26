@@ -44,7 +44,7 @@
     //     });
     // }
 
-    if (flatpickrDateTime.length > 0) {
+    if (flatpickrDateTime) {
         flatpickrDateTime.forEach((input) => {
             flatpickr(input, {
                 monthSelectorType: 'static',
