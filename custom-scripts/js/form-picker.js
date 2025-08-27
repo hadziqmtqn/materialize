@@ -47,8 +47,6 @@
     if (flatpickrDateTime.length > 0) {
         flatpickrDateTime.forEach((input) => {
             flatpickr(input, {
-                altInput: true,
-                altFormat: "F j, Y H:i",
                 locale: "id",
                 enableTime: true,
                 dateFormat: 'Y-m-d H:i',
